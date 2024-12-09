@@ -85,6 +85,6 @@
                 <div class="label">{{ $nama_kelas }}</div>
             </div>
         </div>
-    
+
 </body>
 </html>
