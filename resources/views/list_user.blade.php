@@ -119,7 +119,7 @@
 
 
 <div class="content-table">
-        <a href="" class="btn-tambah">Tambah User</a>
+        <a href="{{ route('user.create') }}" class="btn-tambah">Tambah User</a>
     <div class="table-container">
         <table class="table">
             <thead>
@@ -128,17 +128,18 @@
                     <th scope="col">Nama</th>
                     <th scope="col">NPM</th>
                     <th scope="col">Kelas</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody class="table-group">
                 @foreach ($users as $user)
                     <tr>
-                        <td>{{ $user['id'] }}</td>
-                        <td>{{ $user['nama'] }}</td>
-                        <td>{{ $user['npm'] }}</td>
-                        <td>{{ $user['nama_kelas'] }}</td>
-                        <td></td>
+                        <td><?= $user['id'] ?></td>
+                        <td><?= $user['nama'] ?></td>
+                        <td><?= $user['npm'] ?></td>
+                        <td><?= $user['nama_kelas'] ?></td>
+                        <td><a href="{{ route('user.show', $user->id) }}" class="btn-detail">Detail</a></td>
                     </tr>
                 @endforeach
             </tbody>

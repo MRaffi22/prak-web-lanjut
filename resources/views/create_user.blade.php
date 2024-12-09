@@ -16,6 +16,13 @@
             @error('npm')
                 <div class="message-error">{{ $message }}</div>
             @enderror
+
+            <label for="foto">Foto: </label>
+            <input type="file" id="foto" name="foto"  value="{{ old('foto') }}" class="@error('foto') input-invalid @enderror"><br>
+            @error('foto')
+            <div class="message-error">{{ $message }}</div>
+            @enderror
+
             <label for="kelas_id">Kelas:</label>
             <select name="kelas_id" id="kelas_id" class="@error('kelas_id') input-invalid @enderror">
                 <option value="">Pilih Kelas</option>
@@ -28,6 +35,8 @@
             @error('kelas_id')
                 <div class="message-error">{{ $message }}</div>
             @enderror
+
+
 
             <input type="submit" value="Submit">
         </form>

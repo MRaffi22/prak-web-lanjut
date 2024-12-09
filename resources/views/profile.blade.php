@@ -74,17 +74,13 @@
     </style>
 </head>
 <body>
-
-        <div class="card-img">
-            <div class="profile-img">
-                <img src="/asset/images/game.jpg">
-            </div>
-            <div class="info">
-                <div class="label">{{ $nama }}</div>
-                <div class="label">{{ $npm }}</div>
-                <div class="label">{{ $nama_kelas }}</div>
-            </div>
+    <div class="card-img">
+        <img src="{{ asset('storage/' . $user->foto)}}" alt="Profile Img" class="profile-img" width="100">
+        <div class="info">
+        <h1 class="label">{{ $user->nama }} </h1>
+        <h1 class="label">{{ $user->npm }}  </h1>
+        <h1 class="label">{{ $user->nama_kelas  ?? 'Kelas tidak ditemukan' }}</h1>
         </div>
-
+    </div>
 </body>
 </html>

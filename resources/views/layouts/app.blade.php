@@ -76,7 +76,7 @@
 
         input,
         select {
-            width: 100%;
+            width: 95%;
             padding: 12px;
             font-size: 1rem;
             border: 1px solid #ccc;
