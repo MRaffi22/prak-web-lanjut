@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <style>
-        .background {
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -74,17 +74,17 @@
     </style>
 </head>
 <body>
-    <div class="background">
+
         <div class="card-img">
             <div class="profile-img">
                 <img src="/asset/images/game.jpg">
             </div>
             <div class="info">
                 <div class="label">{{ $nama }}</div>
-                <div class="label">{{ $kelas }}</div>
                 <div class="label">{{ $npm }}</div>
+                <div class="label">{{ $nama_kelas }}</div>
             </div>
         </div>
-    </div>
+    
 </body>
 </html>
