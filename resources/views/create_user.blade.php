@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section ('content')
+{{-- Create_User --}}
     <div class="container">
         <form action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
             @csrf

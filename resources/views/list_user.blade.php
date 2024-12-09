@@ -83,6 +83,33 @@
             text-align: center;
         }
 
+        .view, .edit, .delete {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .view {
+            background-color: #69cfee;
+        }
+
+        .edit {
+            background-color: #26f159;
+        }
+
+        .delete {
+            background-color: #e61515;
+        }
+
+        .view:hover, .edit:hover, .delete:hover {
+            opacity: 0.8;
+        }
+
         @media screen and (max-width: 768px) {
 
             .table-container {
@@ -116,8 +143,7 @@
     </style>
 </head>
 <body>
-
-
+{{-- List User --}}
 <div class="content-table">
         <a href="{{ route('user.create') }}" class="btn-tambah">Tambah User</a>
     <div class="table-container">
@@ -139,7 +165,22 @@
                         <td><?= $user['nama'] ?></td>
                         <td><?= $user['npm'] ?></td>
                         <td><?= $user['nama_kelas'] ?></td>
-                        <td><a href="{{ route('user.show', $user->id) }}" class="btn-detail">Detail</a></td>
+                        <td><img src="{{ asset('storage/' . $user->foto)}}" alt="Foto User" width="100"></td>
+                        <td>
+                             <!-- View -->
+                        <a href="{{ route('user.show', $user['id']) }}" class="view">View</a>
+
+                        <!-- Edit -->
+                        <a href="{{ route('user.edit', $user['id']) }}" class="edit">Edit</a>
+
+                        <!-- Delete -->
+                        <form action="{{ route('user.destroy', $user['id']) }}" method="POST" style="display:inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete"
+                                onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Delete</button>
+                         </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

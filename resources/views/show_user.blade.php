@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <meta name="btn-kembaliport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Show User</title>
     <style>
         body {
             display: flex;
@@ -58,6 +59,25 @@
             letter-spacing: 1px;
         }
 
+        .btn-kembali{
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-kembali {
+            background-color: #2147c4;
+        }
+
+        .btn-kembali:hover {
+            opacity: 0.8;
+        }
+
         @media screen and (max-width: 768px) {
             .background {
                 padding: 10px;
@@ -75,13 +95,13 @@
 </head>
 <body>
     <div class="card-img">
-        <img src="/asset/images/game.jpg" alt="Profile Img" class="profile-img">
+        <img src="{{ asset('storage/' . $user->foto)}}" alt="Profile Img" class="profile-img" width="150">
         <div class="info">
-            <h1 class="label">{{$nama}}</h1>
-            <h1 class="label">{{ $npm }}</h1>
-            <h1 class="label">{{ $nama_kelas }}</h1>
+        <h1 class="label">{{ $user->nama }} </h1>
+        <h1 class="label">{{ $user->npm }}  </h1>
+        <h1 class="label">{{ $nama_kelas  ?? 'Kelas tidak ditemukan' }}</h1>
+        <a href="{{ route('user.list') }}" class="btn-kembali">Kembali ke List</a>
         </div>
     </div>
-
 </body>
 </html>
