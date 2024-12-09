@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #66dbea 0%, #4ba279 100%);
+            background: linear-gradient(135deg, #86e5f1 0%, #2be93b 100%);
             display: flex;
             justify-content: center;
             align-items: center;
