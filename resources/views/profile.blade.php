@@ -80,9 +80,9 @@
                 <img src="/asset/images/game.jpg">
             </div>
             <div class="info">
-                <div class="label">{{ $nama }}</div>
-                <div class="label">{{ $kelas }}</div>
-                <div class="label">{{ $npm }}</div>
+                <h1 class="label">{{$nama}}</h1>
+                <h1 class="label">{{ $npm }}</h1>
+                <h1 class="label">{{ $kelas }}</h1>
             </div>
         </div>
     </div>
